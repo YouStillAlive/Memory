@@ -13,17 +13,7 @@ $(document).ready(function () {
         setCardsConfiguration();
         randomise();
         showPlayground();
-        //setShadowEffectAll("5px 0px 10px gray");
     });
-
-    function setShadowEffectAll(effect) {
-        for (let i = 0; i < $("img").length; i++) {
-            //if ($("img").get(i).src.slice($("img").get(i).src.length - 9) !== "shirt.png") {
-            $("img").get(i).style.boxShadow = effect;
-            //}
-            //document.querySelectorAll("img")[i].style.boxShadow = effect;
-        }
-    }
 
     function setCardsConfiguration() {
         if (countCards % 2 != 0 || countCards <= 0 || countRows > countCards || countRows <= 0)
@@ -89,7 +79,6 @@ $(document).ready(function () {
             }
         }
     });
-
 
     function checkVictory() {
         return JSON.stringify(playground) === JSON.stringify(hiddenPlayground);
