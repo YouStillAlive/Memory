@@ -54,12 +54,12 @@ $(document).ready(function () {
         if (event.target.hasAttribute('src') && event.target.src.slice(event.target.src.length - 9) === "shirt.png") {
             curCard++;
             if (curCard === 1) {
-                event.target.src = "images/" + playground[event.target.id];
+                event.target.src = "Images/" + playground[event.target.id];
                 hiddenPlayground[event.target.id] = playground[event.target.id];
                 previousID = event.target.id;
             }
             if (curCard === 2) {
-                event.target.src = "images/" + playground[event.target.id];
+                event.target.src = "Images/" + playground[event.target.id];
                 hiddenPlayground[event.target.id] = playground[event.target.id];
                 setTimeout(function () {
                     if (checkVictory()) {
@@ -68,8 +68,8 @@ $(document).ready(function () {
                         $(".victory").css({ display: "block" });
                     }
                     else if (playground[event.target.id] !== playground[previousID]) {
-                        event.target.src = "images/shirt.png";
-                        $("img").get(previousID).src = "images/shirt.png";
+                        event.target.src = "Images/shirt.png";
+                        $("img").get(previousID).src = "Images/shirt.png";
                         hiddenPlayground[event.target.id] = "shirt.png";
                         hiddenPlayground[previousID] = "shirt.png";
                     }
@@ -118,12 +118,12 @@ $(document).ready(function () {
 
     function showPlayground() {
         for (let i = 0; i < $("img").length; i++) {
-            $("img").get()[i].src = "images/" + playground[i];
+            $("img").get()[i].src = "Images/" + playground[i];
         }
     }
     function hidePlayground() {
         for (let i = 0; i < $("img").length; i++) {
-            setTimeout(() => $("img").get()[i].src = "images/" + hiddenPlayground[i], 500);
+            setTimeout(() => $("img").get()[i].src = "Images/" + hiddenPlayground[i], 500);
         }
     }
 
